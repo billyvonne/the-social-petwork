@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/billyvonne/the-social-petwork/issues"
   },
-  "homepage": "https://github.com/billyvonne/the-social-petwork#readme"
+  "homepage": "https://github.com/billyvonne/the-social-petwork#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "david": "^11.0.0",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0"
+  }
 }
