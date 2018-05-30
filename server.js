@@ -22,7 +22,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Routes //
-require("../routes/api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 // Insert static directory here (public)
 app.use(express.static("public"));
