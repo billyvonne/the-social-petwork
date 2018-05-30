@@ -1,8 +1,8 @@
 {
     "development": {
       "username": "root",
-      "password": null,
-      "database": "",
+      "password": "password",
+      "database": "petwork_db",
       "host": "localhost",
       "port": 3306,
       "dialect": "mysql"
