@@ -9,7 +9,7 @@ CREATE TABLE users
 (
 	id int NOT NULL AUTO_INCREMENT,
 	user_name varchar(20) NOT NULL UNIQUE,
-	user_password varchar(20) TEXT NOT NULL,
+	user_password varchar(20) NOT NULL,
 	PRIMARY KEY (id)
 );
 
