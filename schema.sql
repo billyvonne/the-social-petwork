@@ -18,6 +18,8 @@ CREATE TABLE pets
 	id int NOT NULL AUTO_INCREMENT,
 	pet_type varchar(25) NOT NULL,
     pet_name varchar(40) NOT NULL,
+    pet_age int(3), 
+    pet_birthday DATE,
 	user_id int NOT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY (user_id) REFERENCES users(id)
