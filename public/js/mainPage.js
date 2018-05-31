@@ -1,7 +1,8 @@
 $(document).ready(function() {
+
+  // Toggle between Sign-Up and Log-In buttons
     $('select').material_select();
     });
-
 
     $(".1").click(function(){
 
@@ -19,4 +20,4 @@ $(document).ready(function() {
             y.style.display = "none";
         } 
     $("#myDIV2").toggle(500);
-    });
+});
