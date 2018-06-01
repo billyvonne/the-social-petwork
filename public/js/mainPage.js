@@ -28,6 +28,9 @@ $(document).ready(function() {
   $(document).on("submit", "#register", handleNewUserSubmit);
   $(document).on("submit", "#login", handleUserLogInSubmit);
 
+  // Display Most Recent Pets
+  getRecentPets();
+
   // On-click event for Register Button
         function handleNewUserSubmit() {
             event.preventDefault();
