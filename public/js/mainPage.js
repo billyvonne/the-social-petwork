@@ -32,11 +32,11 @@ $(document).ready(function() {
   getRecentPets();
 
   // On-click event for Register Button
-        function handleNewUserSubmit() {
+        function handleNewUserSubmit(event) {
             event.preventDefault();
         }
   // On-click event for Login button
-        function handleUserLogInSubmit() {
+        function handleUserLogInSubmit(event) {
             event.preventDefault();
         }
 
@@ -53,7 +53,7 @@ $(document).ready(function() {
 
         // A function to GET most recent pets from the DB and get them ready for display
         function getRecentPets() {
-            $.get("", function(data) {
+            $.get("/api/pets", function(data) {
                 var row1 = [];
                 var row2 = [];
                 for (var i = 0; i < 6; i++) {
