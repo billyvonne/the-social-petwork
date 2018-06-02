@@ -8,7 +8,7 @@ var path = require("path");
 
 // Routes
 // =============================================================
-module.exports = function(app) {
+module.exports = function(app, passport) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
@@ -27,6 +27,9 @@ module.exports = function(app) {
 
 // Home Page (/)
 
+app.get('/', function(req, res) {
+  res.render('mainPage.html'); // load the mainPage.html file
+});
 
 
 // Login Page (/login)
