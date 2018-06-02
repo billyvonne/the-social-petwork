@@ -38,6 +38,17 @@ $(document).ready(function() {
         }
 
   // Most Recent Pets
+        // A function to create a card with pet data
+        function createRecentPetCard(petData) {
+            var newCol = $("<div class='col s4'>");
+            var newCard = $("<div class='card'>");
+            newCard.append("<div class='card-image'><img src='https://www.studiblog.net/wp-content/uploads/2016/09/Unbenannt-660x330.png><a class='btn-floating halfway-fab waves-effect waves-light red><i class='material-icons'>add</i></a></div>");
+            newCard.append("<div class='card-content'><p>" + petData.pet_name + "</p></div>");
+            newCol.append(newCard);
+            return newCol;
+        }
+
+        // A function to GET most recent pets from the DB and get them ready for display
         function getRecentPets() {
             $.get("", function(data) {
                 var row1 = [];
@@ -52,6 +63,16 @@ $(document).ready(function() {
                 renderRecentPetsR1(row1);
                 renderRecentPetsR2(row2);
             });
+        }
+
+        // Two functions to display most recent pets to the page
+        function renderRecentPetsR1(cards) {
+            r1.empty();
+            r1.append(cards);
+        }
+        function renderRecentPetsR2(cards) {
+            r1.empty();
+            r2.append(cards);
         }
   // Featured Pet
         // A function for retrieving featured pet
