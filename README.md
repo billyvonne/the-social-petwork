@@ -1,4 +1,5 @@
-<img src="/public/images/logo.png" align="center" /- 
+<img src="/public/images/logo.png" align="center" />
+
 
 # The Social Petwork
 
