@@ -1,3 +1,6 @@
+var mySQL2 = require('mySQL2')
+var bcrypt = require('bcrypt-nodejs')
+
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
       user_name: {
@@ -25,3 +28,5 @@ module.exports = function(sequelize, DataTypes) {
     
     return User;
   };
+
+
