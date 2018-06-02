@@ -28,7 +28,7 @@ module.exports = function(app) {
     });
   
     // POST
-    app.get("/api/pets", function(req, res) {
+    app.post("/api/pets", function(req, res) {
         db.Pet.create(req.body).then(function(dbPet) {
             res.json(dbPost);
         });
