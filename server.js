@@ -18,22 +18,38 @@ var session      = require('express-session');
 // Require Models
 var db = require("./models");
 
+// require('./config/passport')(passport); // pass passport for configuration
+
+// set up our express application
+app.use(morgan('dev')); // log every request to the console
+app.use(cookieParser()); // read cookies (needed for auth)
+
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true })); // get information from html forms
 
-// parse application/json
-app.use(bodyParser.json());
+// required for passport
+app.use(session({ secret: 'fureverfriendsisnotinclusive' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
 
-
-// Routes //
-// require("./routes/api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+// routes ======================================================================
+require('../routes/api-routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+require("./routes/html-routes.js")(app, passport); // load our html routes and pass in our app and fully configured passport
 
 // Insert static directory here (public)
 app.use(express.static("public"));
 
+
+
+// launch ======================================================================
 app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+console.log("The magic happens on PORT" + PORT);
 });
+
+
+
+
+
 
 
