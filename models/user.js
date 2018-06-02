@@ -16,5 +16,12 @@ module.exports = function(sequelize, DataTypes) {
       }
 
     });
+
+    User.associate = function(models) {
+        User.hasMany(models.Pet, {
+            onDelete: "cascade"
+        });
+    };
+    
     return User;
   };
