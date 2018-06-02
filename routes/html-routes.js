@@ -22,3 +22,24 @@ module.exports = function(app) {
   });
 
 };
+
+// 
+
+// Home Page (/)
+
+
+
+// Login Page (/login)
+
+
+
+// Signup Page (/signup)
+
+
+// Handle the POST for both login
+
+
+// Handle the POST for both signup
+
+
+// Profile Page (after logged in)
