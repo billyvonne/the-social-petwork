@@ -34,6 +34,24 @@ $(document).ready(function() {
   // On-click event for Register Button
         function handleNewUserSubmit(event) {
             event.preventDefault();
+
+            var newUser = {
+                first_name: $("#first_name").val().trim(),
+                last_name: $("#last_name").val().trim(),
+                user_email: $("#email").val().trim(),
+                user_password: $("#password").val().trim(),
+            };
+
+            $.post("/api/newuser", newUser)
+                .then(function(data) {
+                    console.log(data);
+                    alert("New User added. Please login!");
+                });
+
+            $("#first_name").val("");
+            $("#last_name").val("");
+            $("#email").val("");
+            $("#password").val("");
         }
   // On-click event for Login button
         function handleUserLogInSubmit(event) {
