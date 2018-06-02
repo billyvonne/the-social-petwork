@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
     // GET-all posts
-    app.get("/api/pets", function(rep, res) {
+    app.get("/api/pets", function(req, res) {
         var query = {};
         if (req.query.user_id) {
             query.UserId = req.query.user_id;
