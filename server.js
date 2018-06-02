@@ -1,15 +1,22 @@
 // Server.js - Running the Node/Express Server
 
 // Declare dependencies
-var express = require("express");
-var bodyParser = require("body-parser");
+var express  = require('express');
+var app      = express();
+var port     = process.env.PORT || 8080;
+var sequelize = require('sequelize');
+var passport = require('passport');
+var flash    = require('connect-flash');
 
+var david        = require('david')
+var morgan       = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser   = require('body-parser');
+var session      = require('express-session');
 
-var PORT = process.env.PORT || 8080;
-var app = express();
 
 // Require Models
-// var db = require("./models");
+var db = require("./models");
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
