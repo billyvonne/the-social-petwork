@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // get information from html
 
 // routes ======================================================================
 require('./routes/api-routes.js')(app); // load our routes and pass in our app and fully configured passport
-require('./routes/pet-api-routes.js')(app); // load our routes and pass in our app and fully configured passport
+// require('./routes/pet-api-routes.js')(app); // load our routes and pass in our app and fully configured passport
 require("./routes/html-routes.js")(app); // load our html routes and pass in our app and fully configured passport
 
 // Insert static directory here (public)
