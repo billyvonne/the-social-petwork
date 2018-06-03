@@ -9,20 +9,20 @@ $(document).ready(function() {
 
     $(".1").click(function(){
 
-    var x = document.getElementById("myDIV2");
+    var x = document.getElementById("logDIV");
     if (x.style.display !== "none") {
         x.style.display = "none";
     } 
-    $("#myDIV").toggle(500);
+    $("#regDIV").toggle(500);
     
     });
 
     $(".2").click(function(){
-        var y = document.getElementById("myDIV");
+        var y = document.getElementById("regDIV");
         if (y.style.display !== "none") {
             y.style.display = "none";
         } 
-    $("#myDIV2").toggle(500);
+    $("#logDIV").toggle(500);
 
   // Event listeners for Register and Login buttons
   $(document).on("submit", "#register", handleNewUserSubmit);
@@ -44,6 +44,12 @@ $(document).ready(function() {
 
             $.post("/api/newuser", newUser)
                 .then(function(data) {
+                    var x = document.getElementById("logDIV");
+                    if (x.style.display !== "none") {
+                        x.style.display = "none";
+                    } 
+                    $("#logDIV").toggle(500);
+
                     console.log(data);
                     alert("New User added. Please login!");
                 });
