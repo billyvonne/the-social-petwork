@@ -23,6 +23,51 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.DATEONLY,
         allowNull: true,
       
+      },
+      fur_color: {
+        type: DataTypes.STRING,
+        allowNull: true,
+  
+      },
+      fave_nap: {
+        type: DataTypes.STRING,
+        allowNull: true,
+  
+      },
+      fave_food: {
+        type: DataTypes.STRING,
+        allowNull: true,
+  
+      },
+      fave_toy: {
+        type: DataTypes.STRING,
+        allowNull: true,
+  
+      },
+      fave_scratch: {
+        type: DataTypes.STRING,
+        allowNull: true,
+  
+      },
+      fave_walk: {
+        type: DataTypes.STRING,
+        allowNull: true,
+  
+      },
+      fave_window: {
+        type: DataTypes.STRING,
+        allowNull: true,
+  
+      },
+      fave_feature: {
+        type: DataTypes.STRING,
+        allowNull: true,
+  
+      },
+      bowl_empty: {
+        type: DataTypes.STRING,
+        allowNull: true,
+  
       }
 
     });
