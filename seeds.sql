@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 INSERT INTO users (first_name, last_name, username, email, userPass) 
 VALUES ('Billy', 'Harber', 'Billiam667', 'billy@email.com', '2'), ('Hillary', 'Lavin', 'Hilarious68', 'hillary@email.com', 'password69'), ('Kat', 'Thumma', 'KatAttack', 'kat@email.com', '5oranges');
+=======
+INSERT INTO users (user_name, user_password, real_name, user_email) VALUES ('Billiam667', '2', 'Billy Harber', 'Billyemail@billy.com');
+INSERT INTO users (user_name, user_password, real_name, user_email) VALUES ('Hilarious68', 'password69', 'Hilary Lavin', 'HilMail@bmail.com');
+INSERT INTO users (user_name, user_password, real_name, user_email) VALUES ('KatAttack', '5oranges', 'Kat Thumma', 'KatKat@socks.com');
+>>>>>>> origin/master
 
 
 -- INSERT INTO pets (pet_type, pet_name, pet_age, pet_birthday, fur_color, fave_nap, fave_food, fave_toy, fave_scratch, fave_walk, fave_window, fave_feature, bowl_empty, user_id) VALUES ('cat', 'Dandy', 5, 1);

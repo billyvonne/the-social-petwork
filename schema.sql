@@ -8,11 +8,18 @@ USE petwork_db;
 CREATE TABLE users
 (
 	id int NOT NULL AUTO_INCREMENT,
+<<<<<<< HEAD
     first_name varchar(20) NOT NULL,
     last_name varchar(20) NOT NULL,
 	username varchar(20) NOT NULL UNIQUE,
     email varchar(50) NOT NULL,
 	userPass varchar(20) NOT NULL,
+=======
+	user_name VARCHAR(20) NOT NULL UNIQUE,
+	user_password VARCHAR(20) NOT NULL,
+    real_name VARCHAR(20) NOT NULL,
+    user_email VARCHAR(20) NOT NULL,
+>>>>>>> origin/master
 	PRIMARY KEY (id)
 );
 
