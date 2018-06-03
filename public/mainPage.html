@@ -48,7 +48,7 @@
                 <!-- This is the form for registration -->
                 <div id="myDIV">
                        
-                    <form action ="/signup" method="post" class="col s12" id="reg-form">
+                    <form action ="" method="post" class="col s12" id="reg-form">
                         <div class="row">
 
                             <div class="input-field col s6">
@@ -62,10 +62,16 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
+                                <input id="username" type="text" class="validate" required>
+                                <label for="email">Username</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
                                 <input id="email" type="email" class="validate" required>
                                 <label for="email">Email</label>
                             </div>
-                        </div>
+                        </div> 
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="password" type="password" class="validate" minlength="6" required>
@@ -78,7 +84,7 @@
                             </div>
                     
                             <div class="input-field col s6">
-                                <button class="btn btn-large btn-register waves-effect waves-light" id="register" type="submit" name="action">Register
+                                <button class="btn btn-large btn-register waves-effect waves-light" id="signup" type="submit" name="action">Register
                                     <i class="material-icons right">done</i>
                                 </button>
                             </div>
