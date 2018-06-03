@@ -4,7 +4,7 @@ var db = require("../models");
 
 // Wrap all routes in a module.exports function
 module.exports = function(app) {
-    // GET
+    // GET all users
     app.get("/api/user", function(req,res) {
         db.User.findAll({
             include: [db.Pet]
@@ -12,7 +12,7 @@ module.exports = function(app) {
             res.json(dbUser);
         });
     });
-
+    // GET specific user by id
     app.get("/api/user/:id", function(req,res) {
         db.User.findOne({
             where:  {
@@ -23,15 +23,17 @@ module.exports = function(app) {
             res.json(dbUser);
         });
     });
-    // POST
-    app.post("/api/newuser", function(req, res){
+    // POST routes
+    // Create New User
+    app.post("/api/signup", function(req, res){
         db.User.create(req.body).then(function(dbUser) {
-            res.json(dbAuthor);
+            console.log(dbUser);
+            res.json(dbUser);
         });
     });
     
     // PUT
     // DELETE
-}
+};
 
 
