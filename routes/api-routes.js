@@ -7,7 +7,6 @@ module.exports = function(app) {
     // GET all users
     app.get("/api/user", function(req,res) {
         db.User.findAll({
-            include: [db.Pet]
         }).then(function(dbUser){
             res.json(dbUser);
         });
@@ -26,8 +25,13 @@ module.exports = function(app) {
     // POST routes
     // Create New User
     app.post("/api/signup", function(req, res){
-        db.User.create(req.body).then(function(dbUser) {
-            console.log(dbUser);
+        db.User.create({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            username: req.body.username,
+            email: req.body.email,
+            userPass: req.body.userPass
+        }).then(function(dbUser) {
             res.json(dbUser);
         });
     });
