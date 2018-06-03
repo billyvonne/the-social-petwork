@@ -1,4 +1,4 @@
--- Drops the blogger if it exists currently --
+-- Drops the db if it exists currently --
 DROP DATABASE IF EXISTS petwork_db;
 -- Creates the database --
 CREATE DATABASE petwork_db;
@@ -12,7 +12,7 @@ CREATE TABLE users
     last_name varchar(20) NOT NULL,
 	username varchar(20) NOT NULL UNIQUE,
     email varchar(50) NOT NULL,
-	password varchar(20) NOT NULL,
+	userPass varchar(20) NOT NULL,
 	PRIMARY KEY (id)
 );
 
