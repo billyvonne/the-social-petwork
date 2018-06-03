@@ -42,11 +42,12 @@ right: -20px;
 img {
     width: 100%;
 }
-#myDIV {
+/* DIV for the Register Form */
+#regDIV {
     display:none;
 }
-
-#myDIV2 {
+/* DIV for the Login Form */
+#logDIV {
     display:none;
 }
 
