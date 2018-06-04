@@ -1,6 +1,26 @@
 console.log("loaded da main page!");
 
 $(document).ready(function() {
+    //   Toggle between "Sign-Up" and "Welcome Back" buttons
+
+    $(".1").click(function(){
+
+    var x = document.getElementById("logDIV");
+    if (x.style.display !== "none") {
+        x.style.display = "none";
+    } 
+    $("#regDIV").toggle(500);
+    
+    });
+
+    $(".2").click(function(){
+        var y = document.getElementById("regDIV");
+        if (y.style.display !== "none") {
+            y.style.display = "none";
+        } 
+    $("#logDIV").toggle(500);
+    });
+
   // On-click event for Register Button
         $("#signup").click(function(event) {
             event.preventDefault();
@@ -13,7 +33,7 @@ $(document).ready(function() {
                 user_pass: $("#user_pass").val().trim(),
             };
 
-            $.post("/api/signup", newUser)
+            $.post("/signup", newUser)
                 .then(function(data) {
 
                     console.log(data);
@@ -27,5 +47,10 @@ $(document).ready(function() {
             $("#user_pass").val("");
         });
 
-        
+    // On-click event for Login button
+        $("#login").click(function(event) {
+            event.preventDefault();
+            console.log("You hit login!");
+            
+        })
 });
