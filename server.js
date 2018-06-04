@@ -22,6 +22,13 @@ app.use(bodyParser.json());
 // Static directory
 app.use(express.static(__dirname + "/public"));
 
+// User Sessions
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true
+  }));
+
 // Routes ======================================================================
 require('./routes/api-routes.js')(app);
 // require('./routes/pet-api-routes.js')(app);
