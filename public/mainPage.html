@@ -4,11 +4,11 @@
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Reset CSS-->
-        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="/css/reset.css">
         <!-- Materialize CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <!-- My CSS -->
-        <link rel="stylesheet" href="../public/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -63,7 +63,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="username" type="text" class="validate" required>
-                                <label for="email">Username</label>
+                                <label for="username">Username</label>
                             </div>
                         </div>
                         <div class="row">
@@ -74,8 +74,8 @@
                         </div> 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="userPass" type="password" class="validate" minlength="6" required>
-                                <label for="password">Password</label>
+                                <input id="user_pass" type="password" class="validate" minlength="6" required>
+                                <label for="user_pass">Password</label>
                             </div>
                         </div>
                         <div class="row">
@@ -84,7 +84,7 @@
                             </div>
                     
                             <div class="input-field col s6">
-                                <button class="btn btn-large btn-register waves-effect waves-light" id="signup" type="submit" name="action">Register
+                                <button class="btn btn-large btn-register waves-effect waves-light" id="signup" type="submit" name="action">Sign Up
                                     <i class="material-icons right">done</i>
                                 </button>
                             </div>
@@ -95,12 +95,12 @@
                 <!-- This is the form section for login -->
                 <div id="logDIV">
                        
-                    <form class="col s12" id="reg-form">
+                    <form class="col s12" id="login-form">
                         <div class="row">
                            
                             <div class="input-field col s12">
-                                <input id="email" type="email" class="validate" required>
-                                <label for="email">Email</label>
+                                <input id="user_email" type="email" class="validate" required>
+                                <label for="user_email">Email</label>
                             </div>
 
                         </div>
@@ -173,6 +173,6 @@
     <!-- Materialize Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <!-- My JS -->
-    <script src="../public/js/mainPage.js"></script>
+    <script type="javascript" src="/js/mainPage.js"></script>
     </body>
   </html>
