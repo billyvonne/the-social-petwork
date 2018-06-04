@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }
       },
-      userPass: {
+      user_pass: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
