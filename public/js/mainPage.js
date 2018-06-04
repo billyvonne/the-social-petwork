@@ -1,35 +1,8 @@
+console.log("loaded da main page!");
+
 $(document).ready(function() {
-  // Set-up jQuery references
-//   var r1 = $("#recent-pets-r1");
-//   var r2 = $("#recent-pets-r2");
-
-  // Toggle between "Sign-Up" and "Welcome Back" buttons
-    // $('select').material_select();
-    // });
-
-    // $(".1").click(function(){
-
-    // var x = document.getElementById("logDIV");
-    // if (x.style.display !== "none") {
-    //     x.style.display = "none";
-    // } 
-    // $("#regDIV").toggle(500);
-    
-    // });
-
-    // $(".2").click(function(){
-    //     var y = document.getElementById("regDIV");
-    //     if (y.style.display !== "none") {
-    //         y.style.display = "none";
-    //     } 
-    // $("#logDIV").toggle(500);
-
-
-  // Display Most Recent Pets
-//   getRecentPets();
-
   // On-click event for Register Button
-        $("#signup").submit(function(event) {
+        $("#signup").click(function(event) {
             event.preventDefault();
             console.log("You Hit Submit!");
             var newUser = {
@@ -42,11 +15,6 @@ $(document).ready(function() {
 
             $.post("/api/signup", newUser)
                 .then(function(data) {
-                    var x = document.getElementById("logDIV");
-                    if (x.style.display !== "none") {
-                        x.style.display = "none";
-                    } 
-                    $("#logDIV").toggle(500);
 
                     console.log(data);
                     alert("New User added. Please login!");
@@ -57,7 +25,7 @@ $(document).ready(function() {
             $("#username").val("");
             $("#email").val("");
             $("#user_pass").val("");
-        };
+        });
 
         
 });
