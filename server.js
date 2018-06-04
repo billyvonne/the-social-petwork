@@ -29,10 +29,11 @@ require("./routes/html-routes.js")(app);
 
 
 // Launch ======================================================================
-app.listen(PORT, function() {
-console.log("The magic happens on PORT" + PORT);
+db.sequelize.sync({force: false}).then(function() {
+    app.listen(PORT, function() {
+    console.log("The magic happens on PORT" + PORT);
+    });
 });
-
 
 
 
