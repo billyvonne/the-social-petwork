@@ -1,6 +1,3 @@
-var mySQL2 = require('mySQL2')
-var bcrypt = require('bcrypt-nodejs')
-
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
       first_name: {
@@ -24,43 +21,23 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }
       },
-      email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1]
-        }
-      },
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1]
-        }
-      },
-      real_name: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          validate: {
-              len: [1]
-          }
-      },
       user_email: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          validate: {
-              len: [1]
-          }
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1]
+        }
+      },
+      userPass: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1]
+        }
       }
 
     });
 
-    User.associate = function(models) {
-        User.hasMany(models.Pet, {
-            onDelete: "cascade"
-        });
-    };
-    
     return User;
   };
 
