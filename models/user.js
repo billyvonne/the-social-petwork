@@ -1,46 +1,16 @@
-var mySQL2 = require('mySQL2')
-var bcrypt = require('bcrypt-nodejs')
-
+'use strict';
 module.exports = function(sequelize, DataTypes) {
-    var User = sequelize.define("User", {
-      user_name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1]
-        }
-      },
-      user_password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1]
-        }
-      },
-      real_name: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          validate: {
-              len: [1]
-          }
-      },
-      user_email: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          validate: {
-              len: [1]
-          }
+  var user = sequelize.define('user', {
+    name: DataTypes.STRING,
+    email: DataTypes.STRING,
+    username: DataTypes.STRING,
+    password: DataTypes.STRING
+  }, {
+    classMethods: {
+      associate: function(models) {
+        // associations can be defined here
       }
-
-    });
-
-    User.associate = function(models) {
-        User.hasMany(models.Pet, {
-            onDelete: "cascade"
-        });
-    };
-    
-    return User;
-  };
-
-
+    }
+  });
+  return user;
+};
