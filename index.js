@@ -188,14 +188,6 @@ app.get('/logout', function(req, res) {
   console.log(req.session);
 });
 
-// launch ======================================================================
-
 app.listen(3000, function() {
-  console.log("Successfully Loaded App On Server!");
+  console.log('Successfully started express application!');
 });
-
-
-
-
-
-

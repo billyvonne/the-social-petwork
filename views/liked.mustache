@@ -1,3 +1,8 @@
+<!--Commented out until I figure out functionality
+
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +14,7 @@
         <!-- Materialize CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <!-- My CSS -->
-        <link rel="stylesheet" href="landing.css">
+        <link rel="stylesheet" href="style.css">
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -30,7 +35,22 @@
       </ul>
     </div>
   </nav>
-  <h1>Your session has ended</h1>
+  <div class="navbar">
+    <span><a href="./home">home</a></span><span><a href="./newgab">new gab</a></span><span><a href="./liked">Likes</a></span><span>logged in as {{#name}}{{.}}{{/name}}</span><span><a href="/logout">log out</a></span>
+  </div>
+
+  <div class="bodywrapper">
+    <h3>How do you like me now?</h3>
+    <ul>
+      {{#likes}}
+        <li class="posted">post{{postId}}</li>
+        <li class="liked">was liked by{{user.name}}</li>
+      {{/likes}}
+    </ul>
+  </div>
+
+
+  </form>
 
 
   <!-- JQUERY Library -->
@@ -42,3 +62,6 @@
 </body>
 
 </html>
+
+
+-->
