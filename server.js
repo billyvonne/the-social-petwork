@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 // Routes ======================================================================
 require('./routes/api-routes.js')(app);
