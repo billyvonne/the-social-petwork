@@ -1,8 +1,9 @@
--- Drops the blogger if it exists currently --
+-- Drops the db if it exists currently --
 DROP DATABASE IF EXISTS petwork_db;
 -- Creates the database --
 CREATE DATABASE petwork_db;
 
+<<<<<<< HEAD
 USE petwork_db;
 
 CREATE TABLE users
@@ -61,3 +62,5 @@ CREATE TABLE likes
 -- 	PRIMARY KEY (id),
 -- 	FOREIGN KEY (user_id) REFERENCES users(id)
 -- );
+=======
+>>>>>>> mvc-do-over
