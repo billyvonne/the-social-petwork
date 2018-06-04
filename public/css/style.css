@@ -43,13 +43,13 @@ img {
     width: 100%;
 }
 /* DIV for the Register Form */
-/* #regDIV {
+#regDIV {
     display:none;
-} */
+}
 /* DIV for the Login Form */
-/* #logDIV {
+#logDIV {
     display:none;
-} */
+}
 
 form {
     padding: 10px;
