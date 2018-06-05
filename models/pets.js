@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     bowl_empty: DataTypes.STRING
   }, {});
   pets.associate = function(models) {
-    // associations can be defined here
+    pets.belongsTo(models.user,{as : 'user', foreignKey: 'userId'})
   };
   return pets;
 };
