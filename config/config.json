@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "root",
-      "password": "Sockeybabe13!",
+      "password": "password",
       "database": "petwork_db",
       "host": "localhost",
       "port": 3306,
@@ -9,8 +9,8 @@
     },
     "test": {
       "username": "root",
-      "password": null,
-      "database": "",
+      "password": "password",
+      "database": "petwork_db",
       "host": "localhost",
       "dialect": "mysql"
     },
