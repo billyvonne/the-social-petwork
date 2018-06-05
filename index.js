@@ -26,7 +26,7 @@ app.use(session({
 
 
 app.get('/', function(req, res) {
-  res.render('index')
+  res.render('index');
 })
 
 app.get('/signup', function(req, res) {
