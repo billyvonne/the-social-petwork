@@ -31,67 +31,8 @@
   </nav>
 
 
-  <div class="container">
-    <div class="row">
 
-      <div class="col s4">
-        <div class="row">
-          <div class="col s12">
-            <h3>Welcome, Human {{#name}}{{.}}{{/name}}!</h3>
-          </div>
-        </div>
 
-        <div class="row">
-        <div class="col s12">
-          <h4>Human {{#name}}{{.}}{{/name}}'s Menagerie!</h4>
-          <div class="row">
-            <div id="PetBox">
-              This is where we'll somehow populate the pets that the user creates after hitting the add pet function above. It should be a fun scroll box.
-            </div>
-          </div> 
-          <div class="row">
-            <div class="col s12">
-              <a class="btn btn-large waves-effect waves-light" href="/addpet">Add a Pet<i class="material-icons right">add_box</i></a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      </div>
-      
-      
-      <div class="col s8">
-        <div class="row">
-          <div class="col s12">
-            <h2>Most Recent Pet Posts</h2>
-            {{#posts}}
-              <div>
-                
-
-                <li class="posttitle">{{title}}
-                  
-
-                </li>
-                <div id="postBody">{{body}}</div>
-                
-                <div id="timestamp">Created at: {{createdAt}}</div>
-
-              </div>
-              <form class="" action="/like" method="post">
-                <label>like post: </label><input class="submitbtn" type="submit" name="submitbtn" value="{{id}}">
-                <label>Delete post: </label><input class="submitbtn" type="submit" name="submitbtn" value="{{id}}">
-              </form>
-            {{/posts}}
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            <a class="btn btn-large waves-effect waves-light" href="/newgab">New Post<i class="material-icons right">add_box</i></a>
-          </div>
-        </div>  
-      </div>
-    </div>  
-  </div>
 
 
   <!-- JQUERY Library -->
