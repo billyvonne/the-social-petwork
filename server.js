@@ -26,7 +26,9 @@ app.use(session({
   saveUninitialized: true
 }));
 
-
+// ==============================
+// HTML Routes
+// ==============================
 app.get('/', function(req, res) {
   res.render('index');
 })
@@ -44,7 +46,11 @@ app.get('/login', function(req, res) {
 // });
 
 
+// ==============================
+// API Routes
+// ==============================
 
+// User Login
 app.get('/login', function(req, res) {
   if (req.session && req.session.authenticated) {
     var user = models.user.findOne({
@@ -67,7 +73,6 @@ app.get('/login', function(req, res) {
     res.redirect('/home')
   }
 })
-
 
 app.post('/login', function(req, res) {
   let username = req.body.username;
@@ -94,7 +99,7 @@ app.post('/login', function(req, res) {
 })
 
 
-
+// Create New User
 app.post('/signup', function(req, res) {
   const user = models.user.build({
     name: req.body.name,
@@ -114,6 +119,29 @@ app.post('/signup', function(req, res) {
 
 })
 
+// Create New Pet
+app.post('/addpet', function(req, res) {
+  const pet = models.pet.build({
+    pet_type: req.body.pet_type,
+    pet_name: req.body.pet_name,
+    pet_age: req.body.pet_age, 
+    pet_birthday: req.body.pet_age,
+    fur_color: req.body.fur_color,
+    fave_nap: req.body.fave_nap,
+    fave_food: req.body.fave_food,
+    fave_toy: req.body.fave_toy,
+    fave_scratch: req.body.fave_scratch,
+    fave_walk: req.body.fave_walk,
+    fave_window: req.body.fave_window,
+    fave_feature: req.body.fave_feature,
+    bowl_empty: req.body.bowl_empty,
+  })
+  pet.save().then(function(pet) {
+    console.log(pet)
+  })
+})
+
+// Create New Post and Save to DB
 app.post('/newgab', function(req, res) {
   const post = models.post.build({
     userId: req.session.userId,
@@ -126,6 +154,7 @@ app.post('/newgab', function(req, res) {
   })
 })
 
+// Render All Posts to User Home Page
 app.get('/home', function(req, res) {
   models.post.findAll().then(function(posts) {
     res.render('home', {
@@ -135,6 +164,7 @@ app.get('/home', function(req, res) {
   })
 })
 
+
 app.get('/newgab', function(req, res) {
   models.post.findAll().then(function(posts) {
     res.render('newgab', {
@@ -143,6 +173,7 @@ app.get('/newgab', function(req, res) {
     })
   })
 })
+
 
 app.post('/home', function(req, res) {
   const post = models.post.build({
