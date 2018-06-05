@@ -8,6 +8,8 @@ const models = require('./models');
 const session = require('express-session');
 const app = express();
 
+var PORT = process.env.PORT || 3000;
+
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', './views')
@@ -188,6 +190,6 @@ app.get('/logout', function(req, res) {
   console.log(req.session);
 });
 
-app.listen(3000, function() {
+app.listen(PORT, function() {
   console.log('Successfully started express application!');
 });
