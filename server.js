@@ -139,7 +139,7 @@ app.get('/addpet', function(req, res) {
     })
   })
 })
-  
+// POST for saving new pet to the DB  
 app.post('/addpet', function(req, res) {
   const pet = models.pet.build({
     pet_type: req.body.pet_type,
