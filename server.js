@@ -126,6 +126,7 @@ app.post('/signup', function(req, res) {
 app.get('/addpet', function(req, res) {
   models.post.findAll().then(function(posts) {
     res.render('addpet', {
+      name: req.session.username
     // Something should go here, probably.
     })
   })
@@ -148,7 +149,7 @@ app.post('/addpet', function(req, res) {
     fave_feature: req.body.fave_feature,
     bowl_empty: req.body.bowl_empty,
   })
-  post.save().then(function(pet) {
+  pet.save().then(function(pet) {
     console.log(pet)
   })
 })
