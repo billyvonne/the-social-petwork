@@ -6,18 +6,18 @@ nav {
   background-color: #acb977;
 }
 nav .brand-logo {
-  position: absolute;
-  color: #fff;
-  display: inline-block;
-  font-size: 2.1rem;
-  padding: 0px 0px 0px 20px;
-  }
+position: absolute;
+color: #fff;
+display: inline-block;
+font-size: 2.1rem;
+padding: 0px 0px 0px 20px;
+}
 
-  body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  }
+body {
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+}
 
 main {
   flex: 1 0 auto;
@@ -99,4 +99,8 @@ max-height: 40px;
 
 .btn:hover {
   background-color: #5d4037;
+}
+
+.btn:focus{ 
+  background-color: #5d4037; 
 }

@@ -208,6 +208,7 @@ app.post('/newgab', function (req, res) {
 
   post.save().then(function (post) {
     console.log(post);
+    res.redirect('/home')
   })
 })
 
