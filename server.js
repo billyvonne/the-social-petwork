@@ -47,6 +47,12 @@ app.get('/addpet', function (req, res) {
   })
 });
 
+app.get('/home', function(req, res) {
+  res.render('home', {
+    name: req.session.username
+  })
+});
+
 
 // app.get('/liked', function(req, res) {
 //   res.render('liked');
@@ -157,20 +163,26 @@ app.post('/addpet', function (req, res) {
   })
   pet.save().then(function (pet) {
     console.log(pet)
+    res.redirect('/home');
   })
+
 })
 
 // Display user's pets on user homepage
 app.get('/home', function (req, res) {
+  let userId = req.session.userId;
   models.pet.findAll({
     where: {
-      userId: req.session.userId
+      userId: userId
     }
   }).then(function (pets) {
+    console.log(res)
+    console.log("This is the user id: " + userId);
+    console.log(pets);
     res.render('home', {
       pets: pets,
-      petname: pet.dataValues.pet_name,
-      pettype: pet.dataValues.pet_type
+      petname: req.session.pet_name,
+      pettype: req.session.pet_type
     })
   })
 })
