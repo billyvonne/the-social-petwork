@@ -86,3 +86,7 @@ max-height: 40px;
   overflow: auto;
   overflow-x: hidden;
 }
+
+#mainLogo {
+  border: 10px solid #acb977;
+}
