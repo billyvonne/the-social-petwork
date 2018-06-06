@@ -87,6 +87,7 @@ max-height: 40px;
   overflow-x: hidden;
 }
 
-#mainLogo {
-  border: 10px solid #acb977;
+
+#logregBox {
+  border: 50px solid #acb977;
 }
