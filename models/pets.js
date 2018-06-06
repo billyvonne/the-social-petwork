@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var pets = sequelize.define('pets', {
+  var pet = sequelize.define('pet', {
     pet_type: DataTypes.STRING,
     pet_name: DataTypes.STRING,
     pet_age: DataTypes.STRING,
@@ -15,8 +15,8 @@ module.exports = (sequelize, DataTypes) => {
     fave_feature: DataTypes.STRING,
     bowl_empty: DataTypes.STRING
   }, {});
-  pets.associate = function(models) {
-    pets.belongsTo(models.user,{as : 'user', foreignKey: 'userId'})
+  pet.associate = function(models) {
+    pet.belongsTo(models.user,{as : 'user', foreignKey: 'userId'})
   };
-  return pets;
+  return pet;
 };
