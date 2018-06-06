@@ -119,7 +119,10 @@ app.post('/signup', function(req, res) {
 
 })
 
-// On click of Add Pet button, sends the user to the /addpet view.
+
+
+// Create New Pet
+// On-click for Add Pet button, sends the user to the /addpet view
 app.get('/addpet', function(req, res) {
   models.post.findAll().then(function(posts) {
     res.render('addpet', {
@@ -128,17 +131,6 @@ app.get('/addpet', function(req, res) {
   })
 })
 
-
-// Create New Pet
-// On-click for button to access pet questionnaire
-app.get('/addpet', function(req, res) {
-  models.pet.findAll().then(function(pets) {
-    res.render('addpet', {
-      pets: pets,
-      name: req.session.username
-    })
-  })
-})
 // POST for saving new pet to the DB  
 app.post('/addpet', function(req, res) {
   const pet = models.pet.build({
