@@ -137,7 +137,8 @@ app.post('/addpet', function(req, res) {
     bowl_empty: req.body.bowl_empty,
   })
   pet.save().then(function(pet) {
-    console.log(pet)
+    res.redirect('/home')
+    console.log(pet);
   })
 })
 
