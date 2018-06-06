@@ -44,8 +44,8 @@ CREATE TABLE likes
 CREATE TABLE pets
 (
 	id int NOT NULL AUTO_INCREMENT,
-	pet_type VARCHAR(25) NOT NULL,
     pet_name VARCHAR(40) NOT NULL,
+    pet_type VARCHAR(25) NOT NULL,
     pet_age int(3), 
     pet_birthday DATE,
     fur_color VARCHAR(100),
@@ -61,5 +61,5 @@ CREATE TABLE pets
 	PRIMARY KEY (id),
 	FOREIGN KEY (user_id) REFERENCES users(id),
     createdAt timestamp,
-    updatedAt datetime,
+    updatedAt datetime
 );
