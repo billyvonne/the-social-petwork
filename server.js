@@ -42,7 +42,9 @@ app.get('/login', function(req, res) {
 });
 
 app.get('/addpet', function(req, res) {
-  res.render('addpet');
+  res.render('addpet', {
+    name: req.session.username
+  })
 });
 
 
