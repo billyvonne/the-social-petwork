@@ -46,7 +46,11 @@
           <h4>Human {{#name}}{{.}}{{/name}}'s Menagerie!</h4>
           <div class="row">
             <div id="PetBox">
-              This is where we'll somehow populate the pets that the user creates after hitting the add pet function above. It should be a fun scroll box.
+              {{#pets}}
+
+              
+                
+              {{/pets}}
             </div>
           </div> 
           <div class="row">
