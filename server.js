@@ -134,7 +134,6 @@ app.get('/addpet', function(req, res) {
   models.pet.findAll().then(function(posts) {
     res.render('addpet', {
       name: req.session.username,
-    // Something should go here, probably.
     })
   })
 })
@@ -160,6 +159,16 @@ app.post('/addpet', function(req, res) {
     console.log(pet)
   })
 })
+
+// Display user's pets on user homepage
+app.get('/user/pets', function(req, res) {
+  models.pet.findAll({where: {userId: req.session.userId}}).then(function(pets) {
+    res.render('home', {
+      pets: pets,
+      petname: pet.dataValues.name
+    })
+  })
+}) 
 
 // Create New Post and Save to DB
 // On-click for add post button
