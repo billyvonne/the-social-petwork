@@ -124,9 +124,11 @@ app.post('/signup', function(req, res) {
 // Create New Pet
 // On-click for Add Pet button, sends the user to the /addpet view
 app.get('/addpet', function(req, res) {
-  models.post.findAll().then(function(posts) {
+  models.pet.findAll().then(function(posts) {
     res.render('addpet', {
-      name: req.session.username
+      name: req.session.username,
+      userId: req.session.userId,
+      pets: pets,
     // Something should go here, probably.
     })
   })
