@@ -92,3 +92,7 @@ max-height: 40px;
   border: 30px solid #acb977;
   padding: 20px;
 }
+
+.btn {
+  background-color: #8d6e63;
+}
