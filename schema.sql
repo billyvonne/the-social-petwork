@@ -57,9 +57,9 @@ CREATE TABLE pets
     fave_window VARCHAR(100),
     fave_feature VARCHAR(100),
     bowl_empty VARCHAR(100),
-	user_id int NOT NULL,
+	userId int NOT NULL,
 	PRIMARY KEY (id),
-	FOREIGN KEY (user_id) REFERENCES users(id),
+	FOREIGN KEY (userId) REFERENCES users(id),
     createdAt timestamp,
     updatedAt datetime
 );
