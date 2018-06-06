@@ -41,6 +41,11 @@ app.get('/login', function(req, res) {
   res.render('login');
 });
 
+app.get('/addpet', function(req, res) {
+  res.render('addpet');
+});
+
+
 // app.get('/liked', function(req, res) {
 //   res.render('liked');
 // });
@@ -127,8 +132,6 @@ app.get('/addpet', function(req, res) {
   models.pet.findAll().then(function(posts) {
     res.render('addpet', {
       name: req.session.username,
-      userId: req.session.userId,
-      pets: pets,
     // Something should go here, probably.
     })
   })
