@@ -169,7 +169,8 @@ app.get('/home', function (req, res) {
   }).then(function (pets) {
     res.render('home', {
       pets: pets,
-      petname: pet.dataValues.name
+      petname: pet.dataValues.pet_name,
+      pettype: pet.dataValues.pet_type
     })
   })
 })
