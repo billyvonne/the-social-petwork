@@ -130,6 +130,16 @@ app.get('/addpet', function(req, res) {
 
 
 // Create New Pet
+// On-click for button to access pet questionnaire
+app.get('/addpet', function(req, res) {
+  models.pet.findAll().then(function(pets) {
+    res.render('addpet', {
+      pets: pets,
+      name: req.session.username
+    })
+  })
+})
+  
 app.post('/addpet', function(req, res) {
   const pet = models.pet.build({
     pet_type: req.body.pet_type,
@@ -152,6 +162,17 @@ app.post('/addpet', function(req, res) {
 })
 
 // Create New Post and Save to DB
+// On-click for add post button
+app.get('/newgab', function(req, res) {
+  models.post.findAll().then(function(posts) {
+    res.render('newgab', {
+      posts: posts,
+      name: req.session.username
+    })
+  })
+})
+
+// POST for saving new post to the DB
 app.post('/newgab', function(req, res) {
   const post = models.post.build({
     userId: req.session.userId,
@@ -168,16 +189,6 @@ app.post('/newgab', function(req, res) {
 app.get('/home', function(req, res) {
   models.post.findAll().then(function(posts) {
     res.render('home', {
-      posts: posts,
-      name: req.session.username
-    })
-  })
-})
-
-
-app.get('/newgab', function(req, res) {
-  models.post.findAll().then(function(posts) {
-    res.render('newgab', {
       posts: posts,
       name: req.session.username
     })
