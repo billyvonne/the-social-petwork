@@ -161,7 +161,7 @@ app.post('/addpet', function(req, res) {
 })
 
 // Display user's pets on user homepage
-app.get('/user/pets', function(req, res) {
+app.get('/home', function(req, res) {
   models.pet.findAll({where: {userId: req.session.userId}}).then(function(pets) {
     res.render('home', {
       pets: pets,
