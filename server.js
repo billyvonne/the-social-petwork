@@ -41,17 +41,17 @@ app.get('/login', function (req, res) {
   res.render('login');
 });
 
-app.get('/addpet', function (req, res) {
-  res.render('addpet', {
-    name: req.session.username
-  })
-});
+// app.get('/addpet', function (req, res) {
+//   res.render('addpet', {
+//     name: req.session.username
+//   })
+// });
 
-app.get('/home', function(req, res) {
-  res.render('home', {
-    name: req.session.username
-  })
-});
+// app.get('/home', function(req, res) {
+//   res.render('home', {
+//     name: req.session.username
+//   })
+// });
 
 
 // app.get('/liked', function(req, res) {
