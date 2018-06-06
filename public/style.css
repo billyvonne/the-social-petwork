@@ -96,3 +96,7 @@ max-height: 40px;
 .btn {
   background-color: #8d6e63;
 }
+
+.btn:hover {
+  background-color: #5d4037;
+}
