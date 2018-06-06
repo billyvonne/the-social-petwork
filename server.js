@@ -41,6 +41,11 @@ app.get('/login', function(req, res) {
   res.render('login');
 });
 
+app.get('/addpet', function(req, res) {
+  res.render('addpet');
+});
+
+
 // app.get('/liked', function(req, res) {
 //   res.render('liked');
 // });
@@ -124,8 +129,9 @@ app.post('/signup', function(req, res) {
 // Create New Pet
 // On-click for Add Pet button, sends the user to the /addpet view
 app.get('/addpet', function(req, res) {
-  models.post.findAll().then(function(posts) {
+  models.pet.findAll().then(function(posts) {
     res.render('addpet', {
+      name: req.session.username,
     // Something should go here, probably.
     })
   })
@@ -148,7 +154,7 @@ app.post('/addpet', function(req, res) {
     fave_feature: req.body.fave_feature,
     bowl_empty: req.body.bowl_empty,
   })
-  post.save().then(function(pet) {
+  pet.save().then(function(pet) {
     console.log(pet)
   })
 })
