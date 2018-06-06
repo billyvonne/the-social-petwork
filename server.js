@@ -119,6 +119,16 @@ app.post('/signup', function(req, res) {
 
 })
 
+// On click of Add Pet button, sends the user to the /addpet view.
+app.get('/addpet', function(req, res) {
+  models.post.findAll().then(function(posts) {
+    res.render('addpet', {
+    // Something should go here, probably.
+    })
+  })
+})
+
+
 // Create New Pet
 app.post('/addpet', function(req, res) {
   const pet = models.pet.build({
@@ -136,9 +146,8 @@ app.post('/addpet', function(req, res) {
     fave_feature: req.body.fave_feature,
     bowl_empty: req.body.bowl_empty,
   })
-  pet.save().then(function(pet) {
-    res.redirect('/home')
-    console.log(pet);
+  post.save().then(function(pet) {
+    console.log(pet)
   })
 })
 
