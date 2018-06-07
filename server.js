@@ -221,7 +221,10 @@ app.get('/home', function (req, res) {
     include: [{
       model: models.user,
       as: 'user'
-    }]
+    }],
+    order: [
+      ['createdAt', 'DESC']
+]
   }).then(function (posts) {
     res.render('home', {
       posts: posts,
@@ -275,7 +278,6 @@ app.get('/liked', function (req, res) {
 app.get('/logout', function (req, res) {
   req.session.destroy(function (err) {})
   res.render('index');
-  console.log(req.session);
 });
 
 app.listen(PORT, function () {
