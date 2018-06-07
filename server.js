@@ -278,7 +278,6 @@ app.get('/liked', function (req, res) {
 app.get('/logout', function (req, res) {
   req.session.destroy(function (err) {})
   res.render('index');
-  console.log(req.session);
 });
 
 app.listen(PORT, function () {
