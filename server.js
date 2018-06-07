@@ -221,7 +221,10 @@ app.get('/home', function (req, res) {
     include: [{
       model: models.user,
       as: 'user'
-    }]
+    }],
+    order: [
+      ['createdAt', 'DESC']
+]
   }).then(function (posts) {
     res.render('home', {
       posts: posts,
