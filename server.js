@@ -42,17 +42,17 @@ app.get('/login', function (req, res) {
   res.render('login');
 });
 
-app.get('/addpet', function (req, res) {
-  res.render('addpet', {
-    name: req.session.username
-  })
-});
+// app.get('/addpet', function (req, res) {
+//   res.render('addpet', {
+//     name: req.session.username
+//   })
+// });
 
-app.get('/home', function(req, res) {
-  res.render('home', {
-    name: req.session.username
-  })
-});
+// app.get('/home', function(req, res) {
+//   res.render('home', {
+//     name: req.session.username
+//   })
+// });
 
 
 // app.get('/liked', function(req, res) {
@@ -148,6 +148,7 @@ app.get('/addpet', function (req, res) {
 // POST for saving new pet to the DB  
 app.post('/addpet', function (req, res) {
   const pet = models.pet.build({
+    userId: req.session.userId,
     pet_type: req.body.pet_type,
     pet_name: req.body.pet_name,
     pet_age: req.body.pet_age,
@@ -170,23 +171,23 @@ app.post('/addpet', function (req, res) {
 })
 
 // Display user's pets on user homepage
-app.get('/home', function (req, res) {
-  let userId = req.session.userId;
-  models.pet.findAll({
-    where: {
-      userId: userId
-    }
-  }).then(function (pets) {
-    console.log(res)
-    console.log("This is the user id: " + userId);
-    console.log(pets);
-    res.render('home', {
-      pets: pets,
-      petname: req.session.pet_name,
-      pettype: req.session.pet_type
-    })
-  })
-})
+// app.get('/home', function (req, res) {
+//   let userId = req.session.userId;
+//   models.pet.findAll({
+//     where: {
+//       userId: userId
+//     }
+//   }).then(function (pets) {
+//     console.log(res)
+//     console.log("This is the user id: " + userId);
+//     console.log(pets);
+//     res.render('home', {
+//       pets: pets,
+//       petname: req.session.pet_name,
+//       pettype: req.session.pet_type
+//     })
+//   })
+// })
 
 // Create New Post and Save to DB
 // On-click for add post button
