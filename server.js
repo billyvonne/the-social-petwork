@@ -147,6 +147,7 @@ app.get('/addpet', function (req, res) {
 // POST for saving new pet to the DB  
 app.post('/addpet', function (req, res) {
   const pet = models.pet.build({
+    userId: req.session.userId,
     pet_type: req.body.pet_type,
     pet_name: req.body.pet_name,
     pet_age: req.body.pet_age,
