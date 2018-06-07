@@ -170,23 +170,23 @@ app.post('/addpet', function (req, res) {
 })
 
 // Display user's pets on user homepage
-app.get('/home', function (req, res) {
-  let userId = req.session.userId;
-  models.pet.findAll({
-    where: {
-      userId: userId
-    }
-  }).then(function (pets) {
-    console.log(res)
-    console.log("This is the user id: " + userId);
-    console.log(pets);
-    res.render('home', {
-      pets: pets,
-      petname: req.session.pet_name,
-      pettype: req.session.pet_type
-    })
-  })
-})
+// app.get('/home', function (req, res) {
+//   let userId = req.session.userId;
+//   models.pet.findAll({
+//     where: {
+//       userId: userId
+//     }
+//   }).then(function (pets) {
+//     console.log(res)
+//     console.log("This is the user id: " + userId);
+//     console.log(pets);
+//     res.render('home', {
+//       pets: pets,
+//       petname: req.session.pet_name,
+//       pettype: req.session.pet_type
+//     })
+//   })
+// })
 
 // Create New Post and Save to DB
 // On-click for add post button
