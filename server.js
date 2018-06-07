@@ -149,6 +149,7 @@ app.get('/addpet', function (req, res) {
 app.post('/addpet', function (req, res) {
   const pet = models.pet.build({
     userId: req.session.userId,
+    pet_photo: req.body.pet_photo,
     pet_type: req.body.pet_type,
     pet_name: req.body.pet_name,
     pet_age: req.body.pet_age,
