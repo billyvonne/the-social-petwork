@@ -44,6 +44,7 @@ CREATE TABLE likes
 CREATE TABLE pets
 (
 	id int NOT NULL AUTO_INCREMENT,
+    pet_photo VARCHAR(100),
     pet_name VARCHAR(40),
     pet_type VARCHAR(25),
     pet_age VARCHAR(100), 
