@@ -104,3 +104,12 @@ max-height: 40px;
 .btn:focus{ 
   background-color: #5d4037; 
 }
+
+#menagerie {
+border: 15px solid #AA7047;
+padding: 30px;
+}
+
+.tablelable{
+background-color: yellow;
+}
