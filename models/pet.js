@@ -1,6 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var pet = sequelize.define('pet', {
+    pet_photo: DataTypes.STRING,
     pet_type: DataTypes.STRING,
     pet_name: DataTypes.STRING,
     pet_age: DataTypes.STRING,
