@@ -18,6 +18,6 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   pet.associate = function(models) {
     pet.belongsTo(models.user,{as : 'user', foreignKey: 'userId'})
-  };
+  }  
   return pet;
 };
