@@ -217,10 +217,15 @@ app.post('/newgab', function (req, res) {
 
 // Render All Posts to User Home Page
 app.get('/home', function (req, res) {
-  models.post.findAll().then(function (posts) {
+  models.post.findAll({
+    include: [{
+      model: models.user,
+      as: 'user'
+    }]
+  }).then(function (posts) {
     res.render('home', {
       posts: posts,
-      name: req.session.username
+      name: req.session.username,
     })
   })
 })
