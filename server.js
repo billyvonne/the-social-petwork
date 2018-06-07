@@ -246,6 +246,7 @@ app.post('/like', function (req, res) {
   })
   like.save().then(function (like) {
     console.log(like);
+    res.redirect('/home')
   });
 });
 
