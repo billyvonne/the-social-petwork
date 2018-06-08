@@ -25,13 +25,12 @@
         <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
         <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
         <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+        <a class="btn waves-effect waves-light 1" href="/logout">Logout</a>
       </ul>
     </div>
   </nav>
-  <div class="navbar">
-    <span><a href="./home">home</a></span><span><a href="./newgab">new gab</a></span><span><a href="./liked">Likes</a></span><span>logged in as {{#name}}{{.}}{{/name}}</span><span><a href="/logout">log out</a></span>
-  </div>
-  <div class="bodywrapper">
+
+  <div class="content">
     <form action="/newgab" method="post">
       <div>
         <h3>Welcome, Human {{#name}}{{.}}{{/name}}</h3>
