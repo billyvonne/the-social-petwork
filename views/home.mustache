@@ -58,40 +58,46 @@
           <div class="col s4 center">
             <a class="btn btn-large waves-effect waves-light" href="/newgab">Create a Post<i class="material-icons right">add_box</i></a>
           </div>
-        </div>  
-      </div>
-    </div>
+        </div> 
 
-    <div class="row">
-      <div class="col s12 center">
         <div class="row">
           <div class="col s12 center">
-            <h2>Most Recent Pet Posts</h2>
-            {{#posts}}
-              <div>
-                
+            <div class="row">
+              <div class="col s12 center">
+                <h2>Most Recent Pet Posts</h2>
+                {{#posts}}
+                <div>
+                  
                 <div class="username">{{user.name}} says:</div>
                 <li class="posttitle">{{title}}</li>
                 <div id="postBody">{{body}}</div>
-                
+                  
                 <div id="timestamp">Created at: {{createdAt}}</div>
 
-              </div>
-              <form class="" action="/like" method="post">
+                </div>
+                <form class="" action="/like" method="post">
                 <label>like post: </label><input class="submitbtn" type="submit" name="submitbtn" value="{{id}}">
                 <span class="likes-link">Likes: {{#likes}}{{likes.length}}{{/likes}}</span>
                 
-              </form>
-            {{/posts}}
-          </div>
+                </form>
+                {{/posts}}
+              </div>
+            </div>
+          <div class="row">
+            <div class="col s12">
+              <a class="btn btn-large waves-effect waves-light" href="/newgab">New Post<i class="material-icons right">add_box</i></a>
+            </div>
+          </div>  
         </div>
-        <div class="row">
-          <div class="col s12">
-            <a class="btn btn-large waves-effect waves-light" href="/newgab">New Post<i class="material-icons right">add_box</i></a>
-          </div>
-        </div>  
-      </div>
-    </div>  
+
+
+
+      </div>  
+    </div>
+   
+
+    
+    
   </div>
 
 
