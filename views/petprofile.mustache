@@ -32,20 +32,62 @@
   <div class="container">
     
 
-    <div class="row">
-      <div class="col s12">
+    {{#pets}}
         <div class="row">
-          {{#pets}}
-            <div class="col s12 center" id="test">
-              <img src="{{pet_photo}}" id="petPic">
-              <p>Name: {{pet_name}} </p>
-              <p>Type: {{pet_type}}</p>
-              <a href="#">This is a link</a>
+            <div class="col s4" style="padding: 10px">
+                <h2>{{pet_name}}</h2>
+                <!-- Temporary Image to be replaced with User Data -->
+                <div id="petPic" class="col s12"> 
+                    <img src="{{pet_photo}}">
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col s12">
+                        <h5>About Me:</h5>    
+                        <table>
+                    
+                            <tbody>
+                                <tr>
+                                    <td>Animal: </td>
+                                    <td>{{pet_type}}</td>     
+                                </tr>
+                                <tr>
+                                    <td>Birthday:</td>
+                                    <td>{{pet_birthday}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Fur Color:</td>
+                                    <td>{{fur_color}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-          {{/pets}}
-        </div>
-      </div>
-    </div>
+            <div class="col s8">
+                <div class="row">
+                    <div class="col s12">
+                        <h4>{{pet_name}}'s Bio</h2>
+                        <p>Hi! My name is {{pet_name}} and I am {{pet_age}} years old. My favorite place to nap is {{fave_nap}} and I love to play with my {{fave_toy}}. My very favorite thing to eat is {{fave_food}}, and my favorite place to get scritches is {{fave_scratch}}. The first thing that people notice about me is {{fave_feature}}. When my bowl is empty, I {{bowl_empty}}.</p>
+                        <h5>How do you feel about going outside?</h5>
+                        <p>{{fave_walk}}</p>
+                        <h5>Do you like windows?</h5>
+                        <p>{{fave_window}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12"><h4>{{pet_name}} Says:</h4>
+                        <div class="BlogPost" style="border:1px solid; padding: 20px;">This is temporary until we have Post functionality from that one Blogger Activity</div>
+                    </div>
+                </div>    
+
+            </div>
+        </div>    
+        
+        
+        </div> 
+                        
+    {{/pets}}
   </div>
 
 
