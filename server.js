@@ -136,30 +136,48 @@ app.post('/signup', function (req, res) {
 // View Pet Menu
 // On-click for Pet Menu button, sends the user to the /petmenu view
 app.get('/petmenu', function (req, res) {
-  models.pet.findAll().then(function (posts) {
+  models.pet.findAll().then(function (pets) {
+    console.log(pets);
     res.render('petmenu', {
-      name: req.session.username,
+      pets: pets,
+      name: req.session.username
     })
   })
-})
+});
 
+// ================================================
+// THESE DO NOTHING - KEEP JUST IN CASE
+// ================================================
 // Render All User's Pets to Pet Menu
-app.get('/petmenu', function (req, res) {
-  models.pet.findAll({
-    where: {
-      userId: req.session.id
-    }
-  }).then(function (posts) {
-    res.render('petmenu', {
-      pets: pets
-    })
-  })
-})
+// Display user's pets on user homepage
+// app.get('/petmenu', function (req, res) {
+//   models.pet.findAll().then(function (pets) {
+//     console.log("This is the user id: " + userId);
+//     console.log(pets);
+//     res.render('petmenu', {
+//       pets: pets
+//     })
+//   })
+// })
+// Display user's pets on user homepage
+// app.get('/petmenu', function (req, res) {
+//   let userId = req.session.userId;
+//   models.pet.findAll().then(function (pets) {
+//     console.log("This is the user id: " + userId);
+//     console.log(pets);
+//     res.render('petmenu', {
+//       // pets: pets
+//     })
+//   })
+// });
+// ================================================
+// THESE DO NOTHING - KEEP JUST IN CASE
+// ================================================
 
 // Create New Pet
 // On-click for Add Pet button, sends the user to the /addpet view
 app.get('/addpet', function (req, res) {
-  models.pet.findAll().then(function (posts) {
+  models.pet.findAll().then(function (pets) {
     res.render('addpet', {
       name: req.session.username,
     })
