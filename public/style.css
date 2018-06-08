@@ -117,3 +117,19 @@ background-color: yellow;
   padding: 20px;
 
 }
+
+#homepage {
+  padding: 10px;
+  color: black;
+}
+
+#buttonbg{
+  background-color:#4a77a0;
+  padding: 10px;
+  border-top: 5px solid #5d4037;
+}
+
+.welcome{
+  font-family: 'Luckiest Guy', cursive;
+  text-transform: uppercase;
+}
