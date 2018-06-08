@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <!-- My CSS -->
         <link rel="stylesheet" href="style.css">
+        <!-- Font Stylings -->
+        <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet"> 
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -33,55 +35,38 @@
   <div class="container">
 
     <div class="row">
-        <div class="col s12 center">
-          <div class="row">
-            <div class="col s12 center">
-              <h1>Welcome, Human {{#name}}{{.}}{{/name}}!</h1>
+      <div class="col s12 center" id="buttonbg">
+        <div class="row">
+          <div class="col s12 center" id="homepage">
+            <div class="row">
+              <div class="col s4">
+                <img src="/assets/images/Smallpeticon.png">
+              </div>
+              <div class="col s8">  
+                <h1 class="welcome">Welcome to your dashboard, Human {{#name}}{{.}}{{/name}}!</h1>
+                <span class="tag">Click the buttons to view different pages, or scroll down to view the newsfeed of other Humans about their beloved pets!</span>
+              </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col s4 center">
-              <a class="btn btn-large waves-effect waves-light" href="/petmenu">View All Pets<i class="material-icons right">add_box</i></a>
-            </div>
-            <div class="col s4 center">
-              <a class="btn btn-large waves-effect waves-light" href="/addpet">Add a Pet<i class="material-icons right">add_box</i></a>
-            </div>
-            <div class="col s4 center">
-              <a class="btn btn-large waves-effect waves-light" href="/newgab">Create a Post<i class="material-icons right">add_box</i></a>
-            </div>
-
-          </div>  
-
         </div>
+        <div class="row">
+          <div class="col s4 center">
+            <a class="btn btn-large waves-effect waves-light" href="/petmenu">View All Pets<i class="material-icons right">add_box</i></a>
+          </div>
+          <div class="col s4 center">
+            <a class="btn btn-large waves-effect waves-light" href="/addpet">Add a Pet<i class="material-icons right">add_box</i></a>
+          </div>
+          <div class="col s4 center">
+            <a class="btn btn-large waves-effect waves-light" href="/newgab">Create a Post<i class="material-icons right">add_box</i></a>
+          </div>
+        </div>  
+      </div>
     </div>
 
     <div class="row">
-
-      <div class="col s4">
-     
-
+      <div class="col s12 center">
         <div class="row">
-        <div class="col s12" id="menagerie">
-          <span class="tablelable">Human {{#name}}{{.}}{{/name}}'s Menagerie!</span>
-            <div class="row">
-              <div class="col s12">
-                <a class="btn btn-large waves-effect waves-light" href="/petmenu">View Your Pets<i class="material-icons right">add_box</i></a>
-              </div>
-            </div>
-          <div class="row">
-            <div class="col s12">
-              <a class="btn btn-large waves-effect waves-light" href="/addpet">Add a Pet<i class="material-icons right">add_box</i></a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      </div>
-      
-      
-      <div class="col s8">
-        <div class="row">
-          <div class="col s12">
+          <div class="col s12 center">
             <h2>Most Recent Pet Posts</h2>
             {{#posts}}
               <div>
@@ -95,8 +80,8 @@
               </div>
               <form class="" action="/like" method="post">
                 <label>like post: </label><input class="submitbtn" type="submit" name="submitbtn" value="{{id}}">
-                <span class="likes-link">Likes: {{likes.length}}</span>
-                <label>Delete post: </label><input class="submitbtn" type="submit" name="submitbtn" value="{{id}}">
+                <span class="likes-link">Likes: {{#likes}}{{likes.length}}{{/likes}}</span>
+                
               </form>
             {{/posts}}
           </div>
