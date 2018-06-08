@@ -134,9 +134,13 @@ app.post('/signup', function (req, res) {
 })
 
 // View Pet Menu
-// On-click for Pet Menu button, sends the user to the /petmenu view
+// On-click for Pet Menu button, sends the user to the /petmenu view, where they see a list of their pets
 app.get('/petmenu', function (req, res) {
-  models.pet.findAll().then(function (pets) {
+  models.pet.findAll({
+    where: {
+      userId: req.session.userId
+    }
+  }).then(function (pets) {
     console.log(pets);
     res.render('petmenu', {
       pets: pets,
