@@ -120,12 +120,13 @@ background-color: yellow;
 
 #homepage {
   padding: 10px;
-  border-bottom: 5px solid #5d4037;
   color: black;
 }
 
 #buttonbg{
   background-color:#4a77a0;
+  padding: 10px;
+  border-top: 5px solid #5d4037;
 }
 
 .welcome{
