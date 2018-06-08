@@ -121,13 +121,13 @@ app.post('/signup', function (req, res) {
     username: req.body.username,
     password: req.body.password
   })
-  // console.log(req.body);
+  console.log(req.body);
 
   user.save().then(function (user) {
     req.username = user.username;
     req.session.authenticated = true;
     res.redirect('/login')
-    // console.log(req.session);
+    console.log(req.session);
   })
 
 
@@ -137,7 +137,7 @@ app.post('/signup', function (req, res) {
 // On-click for Pet Menu button, sends the user to the /petmenu view
 app.get('/petmenu', function (req, res) {
   models.pet.findAll().then(function (pets) {
-    // console.log(pets);
+    console.log(pets);
     res.render('petmenu', {
       pets: pets,
       name: req.session.username
@@ -204,7 +204,7 @@ app.post('/addpet', function (req, res) {
     bowl_empty: req.body.bowl_empty,
   })
   pet.save().then(function (pet) {
-    // console.log(pet)
+    console.log(pet)
     res.redirect('/home');
   })
 
@@ -231,7 +231,7 @@ app.post('/newgab', function (req, res) {
   })
 
   post.save().then(function (post) {
-    // console.log(post);
+    console.log(post);
     res.redirect('/home')
   })
 })
@@ -260,7 +260,7 @@ app.post('/home', function (req, res) {
     title: req.body.gabtitle = req.session.post,
     body: req.body.gabbody = req.session.post,
   })
-  // console.log(req.session.post);
+  console.log(req.session.post);
 
   post.save();
   res.redirect('/home')
@@ -274,7 +274,7 @@ app.post('/like', function (req, res) {
 
   })
   like.save().then(function (like) {
-    // console.log(like);
+    console.log(like);
     res.redirect('/home')
   });
 });
@@ -295,7 +295,7 @@ app.get('/petprofile/:pet', function (req, res) {
 })
 
 
-// TESTING NEW CODE END
+
 
 
 app.get('/liked', function (req, res) {
