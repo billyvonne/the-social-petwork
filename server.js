@@ -280,6 +280,24 @@ app.post('/like', function (req, res) {
 });
 
 
+
+
+app.get('/petprofile/:pet', function (req, res) {
+  models.pet.findAll({
+    where: {
+      pet_name: req.params.pet
+    }
+  }).then(function (pets) {
+    res.render('petprofile', {
+      pets:pets
+    })
+  })
+})
+
+
+
+
+
 app.get('/liked', function (req, res) {
   models.like.findAll({
     include: [{

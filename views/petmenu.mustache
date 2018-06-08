@@ -3,8 +3,6 @@
 <head>
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Reset CSS-->
-        <link rel="stylesheet" href="assets/css/reset.css">
         <!-- Materialize CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <!-- My CSS -->
@@ -33,26 +31,27 @@
 
 
   <div class="container">
+    
     <div class="row">
+      <div class="col s12">
+        <h3>Please Select a Pet!</h3>
+      </div>
+    </div>
 
+    <div class="row">
       <div class="col s12">
         <div class="row">
-          <div class="col s12">
-            <h3>Please Select a Pet!</h3>
-          </div>
-        </div>
-      </div>
-        <div id="PetBox">
-        <p>TESTTESTTESTTEST</p>
           {{#pets}}
-            <p>{{pet_name}}</p>
-            <p>{{pet_type}}</p>
+            <div class="col s3 center" id="test">
+              <img src="{{pet_photo}}" id="petPic">
+              <p>Name: {{pet_name}} </p>
+              <p>Type: {{pet_type}}</p>
+              <a href="#">This is a link</a>
+            </div>
           {{/pets}}
         </div>
-
-
-
-    </div>  
+      </div>
+    </div>
   </div>
 
 

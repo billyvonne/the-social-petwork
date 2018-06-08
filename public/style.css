@@ -66,14 +66,12 @@ form {
 max-height: 40px;
 }
 
-#PetBox {
-  border: 1px solid black;
-  overflow: scroll;
-  overflow-x: hidden;
-  max-height: 300px;
 
+
+#petPic {
+  width: 150px;
+  height: 150px;
 }
-
 #timestamp {
   font-size: 10px;
   margin-left: 10px;
@@ -112,4 +110,10 @@ padding: 30px;
 
 .tablelable{
 background-color: yellow;
+}
+
+#test {
+
+  padding: 20px;
+
 }
