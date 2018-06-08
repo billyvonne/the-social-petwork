@@ -117,3 +117,22 @@ background-color: yellow;
   padding: 20px;
 
 }
+
+#homepage {
+  border: 10px solid #5d4037;
+
+  padding: 10px;
+  
+  color: black;
+  
+  background-color: #AA7047;
+  
+  background-image: url("http://www.petland-dalton.com/wp-content/uploads/2016/02/smallpetbanner.jpg");
+  
+  -webkit-text-stroke: 1px black;
+  
+  color: white;
+  
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
