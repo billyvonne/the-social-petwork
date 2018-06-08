@@ -33,23 +33,31 @@
     
     <div class="row">
       <div class="col s12 center">
-        <h3>Welcome to the Social Petwork's Mengaerie!</h3>
+        <h3>Welcome to Your Mengaerie!</h3>
         <h4>Click on a pet to view their individual profile!</h4>
       </div>
     </div>
 
     <div class="row">
       <div class="col s12">
-        <div class="row">
-          {{#pets}}
-            <div class="col s3 center" id="test">
-              <img src="{{pet_photo}}" id="petPic">
-              <p>Name: {{pet_name}} </p>
-              <p>Type: {{pet_type}}</p>
-              <a href="/petprofile/{{pet_name}}">View {{pet_name}}'s Profile</a>
-            </div>
-          {{/pets}}
-        </div>
+
+              <div class="row">
+                {{#pets}}
+                <div class="col s12 m4 center">
+                  <div class="card">
+                    <div class="card-image center-align">
+                      <img src="{{pet_photo}}" id="petPic">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title">{{pet_name}}</span>
+                    </div>
+                    <div class="card-action">
+                      <a href="/petprofile/{{pet_name}}">View {{pet_name}}'s Profile</a>
+                    </div>
+                  </div>
+                </div>
+                {{/pets}}
+              </div>
       </div>
     </div>
   </div>
