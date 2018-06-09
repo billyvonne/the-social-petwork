@@ -50,7 +50,7 @@
         </div>
         <div class="row" id="buttonbg">
           <div class="col s4 center">
-            <a class="btn btn-large waves-effect waves-light" href="/petmenu">View All Pets<i class="material-icons right">add_box</i></a>
+            <a class="btn btn-large waves-effect waves-light" href="/petmenu">View My Pets<i class="material-icons right">add_box</i></a>
           </div>
           <div class="col s4 center">
             <a class="btn btn-large waves-effect waves-light" href="/addpet">Add a Pet<i class="material-icons right">add_box</i></a>
@@ -64,12 +64,12 @@
           <div class="col s12 center">
             <div class="row">
               <div class="col s12 center">
-                <h2>Most Recent Pet Posts</h2>
+                <span class="welcome1">"Most Recent Pet Posts"</span>
                 {{#posts}}
                 
                   <div class="row">
 
-                    <div class="col s2">
+                    <div class="col s2" id="paw">
                       <img src="/assets/images/PawPrintforPosts.png">
 
                     </div>
@@ -78,11 +78,11 @@
                       <span class="posttitle">{{title}} by: {{user.name}}</span>
                       <div id="postBody">{{body}}</div>
                       <div id="timestamp">Created at: {{createdAt}}</div>
-                      
+                      <hr>
                     </div>
                   </div>
                 {{/posts}}
-                
+                <hr>
               </div>
             </div>
         

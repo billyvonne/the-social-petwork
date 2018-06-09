@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <!-- My CSS -->
         <link rel="stylesheet" href="style.css">
+        <!-- Font Stylings -->
+        <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet"> 
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -35,103 +37,107 @@
 
     
       <div class="row">
-        <div class="col s12">
+        <div class="col s12 center">
 
         
-        <h3>Welcome, Human {{#name}}{{.}}{{/name}}</h3>
+        <span class="welcome1">Welcome, Human {{#name}}{{.}}{{/name}}</span>
         <h5>Add a new pet to your Menagerie!</h5>
-        <form action="/addpet" method="post">
+        <div class="col s2"></div>
+        <div class="col s8 center" id="addpetform">
+            <form action="/addpet" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="pet_photo" placeholder="Paste an Image URL here to add a Picture" id="pet_photo" type="text" class="validate">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="pet_name" id="pet_name" type="text" class="validate" required>
+                        <label for="pet_name">Pet Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="pet_type" id="type" type="text" class="validate" required>
+                        <label for="type">What kind of pet are you?</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="pet_age" id="birth" type="text" class="validate" required>
+                        <label for="birth">How old are you?</label>
+                    </div>
+                </div>
+            
             <div class="row">
                 <div class="input-field col s12">
-                    <input name="pet_photo" placeholder="Paste an Image URL here to add a Picture" id="pet_photo" type="text" class="validate">
+                    <input name="pet_birthday" id="birth" type="text" class="validate" required>
+                    <label for="birth">What's your birthday?</label>
+                </div>
+            </div>
+            
+            
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="fur_color" id="fur" type="text" class="validate" required>
+                    <label for="fur">What color is your fur?</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input name="pet_name" id="pet_name" type="text" class="validate" required>
-                    <label for="pet_name">Pet Name</label>
+                    <input name="fave_nap" id="nap" type="text" class="validate" minlength="6" required>
+                    <label for="nap">What's your favorite napping spot?</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input name="pet_type" id="type" type="text" class="validate" required>
-                    <label for="type">What kind of pet are you?</label>
+                    <input name="fave_food" id="food" type="text" class="validate" minlength="6" required>
+                    <label for="food">What's your favorite food?</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input name="pet_age" id="birth" type="text" class="validate" required>
-                    <label for="birth">How old are you?</label>
+                    <input name="fave_toy" id="toy" type="text" class="validate" minlength="6" required>
+                    <label for="toy">What's your favorite toy?</label>
                 </div>
             </div>
-          
-          <div class="row">
-              <div class="input-field col s12">
-                  <input name="pet_birthday" id="birth" type="text" class="validate" required>
-                  <label for="birth">What's your birthday?</label>
-              </div>
-          </div>
-        
-        
-          <div class="row">
-              <div class="input-field col s12">
-                  <input name="fur_color" id="fur" type="text" class="validate" required>
-                  <label for="fur">What color is your fur?</label>
-              </div>
-          </div>
-          <div class="row">
-              <div class="input-field col s12">
-                  <input name="fave_nap" id="nap" type="text" class="validate" minlength="6" required>
-                  <label for="nap">What's your favorite napping spot?</label>
-              </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-                <input name="fave_food" id="food" type="text" class="validate" minlength="6" required>
-                <label for="food">What's your favorite food?</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="fave_scratch" id="scratch" type="text" class="validate" minlength="6" required>
+                    <label for="scratch">What's your favorite place to be scratched?</label>
+                </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-                <input name="fave_toy" id="toy" type="text" class="validate" minlength="6" required>
-                <label for="toy">What's your favorite toy?</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="fave_walk" id="outside" type="text" class="validate" minlength="6" required>
+                    <label for="outside">Do you like going outside/taking walks?</label>
+                </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-                <input name="fave_scratch" id="scratch" type="text" class="validate" minlength="6" required>
-                <label for="scratch">What's your favorite place to be scratched?</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="fave_window" id="window" type="text" class="validate" minlength="6" required>
+                    <label for="window">How do you feel about windows?</label>
+                </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-                <input name="fave_walk" id="outside" type="text" class="validate" minlength="6" required>
-                <label for="outside">Do you like going outside/taking walks?</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="fave_feature" id="notice" type="text" class="validate" minlength="6" required>
+                    <label for="notice">What's the first thing most notice about you?</label>
+                </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-                <input name="fave_window" id="window" type="text" class="validate" minlength="6" required>
-                <label for="window">How do you feel about windows?</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="bowl_empty" id="bowl" type="text" class="validate" minlength="6" required>
+                    <label for="bowl">What do you do when your food bowl is empty?</label>
+                </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-                <input name="fave_feature" id="notice" type="text" class="validate" minlength="6" required>
-                <label for="notice">What's the first thing most notice about you?</label>
+            <div class="row">
+                <div class="col s12">
+            <button class="btn btn-large btn-register waves-effect waves-light" type="submit">Add Your New Pet!</button>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-                <input name="bowl_empty" id="bowl" type="text" class="validate" minlength="6" required>
-                <label for="bowl">What do you do when your food bowl is empty?</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12">
-          <button class="btn btn-large btn-register waves-effect waves-light" type="submit">Add Your New Pet!</button>
-        </div>
-      </form>
+        </form>
+    </div> 
+    <div class="col s2"></div>
         
           
    
