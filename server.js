@@ -323,6 +323,8 @@ app.get('/logout', function (req, res) {
   res.render('index');
 });
 
-app.listen(PORT, function () {
-  console.log('Successfully started express application!');
-});
+models.sequelize.sync({ force: false}).then(function() {
+  app.listen(PORT, function () {
+    console.log('Successfully started express application!');
+  });
+})
