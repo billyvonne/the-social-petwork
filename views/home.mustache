@@ -69,21 +69,16 @@
                 
                   <div class="row">
 
-                    <div class="col s4">
+                    <div class="col s2">
                       <img src="/assets/images/PawPrintforPosts.png">
 
                     </div>
 
-                    <div class="col s8">
-                      <div class="username">{{user.name}} says:</div>
-                      <span class="posttitle">{{title}}</span>
+                    <div class="col s10">
+                      <span class="posttitle">{{title}} by: {{user.name}}</span>
                       <div id="postBody">{{body}}</div>
                       <div id="timestamp">Created at: {{createdAt}}</div>
-
-                      <form class="" action="/like" method="post">
-                      <input class="submitbtn" type="submit" name="submitbtn" value="{{id}}">Like?</input>
-                      </form>
-                      <span class="likes-link">Likes: {{#likes}}{{likes.length}}{{/likes}}</span>
+                      
                     </div>
                   </div>
                 {{/posts}}
