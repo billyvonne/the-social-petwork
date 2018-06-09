@@ -8,7 +8,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <!-- My CSS -->
         <link rel="stylesheet" href="style.css">
-
+    <!-- Font Stylings -->
+        <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet"> 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -29,22 +30,32 @@
   </nav>
 
   <div class="content">
-    <form action="/newgab" method="post">
-      <div>
-        <h3>Welcome, Human {{#name}}{{.}}{{/name}}</h3>
-
+    <div class="row">
+      <div class="col s12 center">
+        <span class="welcome1">Welcome, Human {{#name}}{{.}}{{/name}}</span>
+         <h5>Create a New Pet Post</h5>
       </div>
-      <h1 class="h1">Create a New Pet Post</h1>
-      <fieldset>
-        <div class="labelwrap">
-          <input class="gabtitle" type="text" name="gabtitle" placeholder="Gab Title">
-          <textarea class="gabbody" type="text" name="gabbody" placeholder="Write your gab here"></textarea>
+    </div>  
+    <div class="row">
+      <div class="col s2"></div>
+      <div class="col s8" id="addpetform">
+        <form action="/newgab" method="post">
+          
+          <fieldset>
+            <div class="labelwrap">
+              <input class="gabtitle" type="text" name="gabtitle" placeholder="Title of Post">
+              <textarea class="gabbody" type="text" name="gabbody" placeholder="Write your post here, limit 300 characters"></textarea>
+            </div>
+            <div class="form__submit-button">
+              <button class="btn btn-large btn-register waves-effect waves-light" type="submit">Add Your New Post!</button>
+            </div>
+          </fieldset>
+        </form>
         </div>
-        <div class="form__submit-button">
-          <button class="btn btn-large btn-register waves-effect waves-light" type="submit">Add Your New Post!</button>
-        </div>
-      </fieldset>
-    </form>
+      </div class="col s2"></div>
+      </div>  
+    </div>  
+    
   </div>
 
 
