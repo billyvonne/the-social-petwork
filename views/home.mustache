@@ -77,7 +77,7 @@
                 </div>
                 <form class="" action="/like" method="post">
                 <label>like post: </label><input class="submitbtn" type="submit" name="submitbtn" value="{{id}}">
-                <span class="likes-link">Likes: {{#likes}}{{likes.length}}{{/likes}}</span>
+                <span class="likes-link">Likes: {{#likes}}{{.}}{{/likes}}</span>
                 
                 </form>
                 {{/posts}}

@@ -245,18 +245,31 @@ app.get('/home', function (req, res) {
   models.post.findAll({
     include: [{
       model: models.user,
-      as: 'user'
     }],
     order: [
       ['createdAt', 'DESC']
-]
+    ]
   }).then(function (posts) {
-    res.render('home', {
-      posts: posts,
-      name: req.session.username,
+    models.like.count({
+      where: {
+        postId: req.params.value
+      }
+    }).then(function (likes) {
+      var data = {
+        post: posts,
+        like: likes
+      }
+      console.log(data);
+      res.render('home', {
+        data: data,
+        name: req.session.username,
+      })
     })
   })
-})
+});
+
+
+
 
 
 app.post('/home', function (req, res) {
@@ -301,6 +314,24 @@ app.get('/petprofile/:pet', function (req, res) {
 
 
 
+// Display # of likes on a post
+app.get('/like', function (req, res) {
+  models.like.count({
+    include: [{
+      model: models.post,
+      as: 'post'
+    }],
+    where: {
+      postId: req.params.value
+    }
+  }).then(function (likes) {
+    console.log("There are" + likes + " likes!");
+    res.render('home', {
+      likes: likes
+    })
+  });
+});
+
 
 app.get('/liked', function (req, res) {
   models.like.findAll({
@@ -314,8 +345,6 @@ app.get('/liked', function (req, res) {
       likes: likes
     })
   });
-
-
 });
 
 app.get('/logout', function (req, res) {
