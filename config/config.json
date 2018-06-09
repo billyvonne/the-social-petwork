@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "root",
-      "password": "password",
+      "password": "password1",
       "database": "petwork_db",
       "host": "127.0.01",
       "port": 3306,
