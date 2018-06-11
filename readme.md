@@ -1,4 +1,4 @@
-<img src="/public/images/logo.png" align="center" />
+<img src="./public/assets/images/TSP-LogoWithBlue.png" align="center" />
 
 
 # The Social Petwork
